@@ -38,7 +38,7 @@
         <key>PayloadDescription</key>
         <string>ну типо хз чё говорить это днс для бс ы</string>
         <key>PayloadDisplayName</key>
-        <string>DarkDNS | s-discord.xyz</string>
+        <string>TheDNS | theyan.ru</string>
         <key>PayloadIdentifier</key>
         <string>com.apple.dnsSettings.managed.fa66937b-b8f5-41e4-be95-4b612726c819</string>
         <key>PayloadType</key>
@@ -52,9 +52,9 @@
       </dict>
     </array>
     <key>PayloadDescription</key>
-    <string>Данный DNS обходит ограничения для игр SC. Если интернет работает плохо, измените DNS на автоматический. s-discord.xyz</string>
+    <string>Данный DNS обходит ограничения для игр SC. Если интернет работает плохо, измените DNS на автоматический. theyan.ru</string>
     <key>PayloadDisplayName</key>
-    <string>DarkDNS | s-discord.xyz</string>
+    <string>TheDNS | theyan.ru</string>
     <key>PayloadIdentifier</key>
     <string>com.notjakob.apple-dns.49b8454f-e095-4b51-8c61-79a5acf2fc4a</string>
     <key>PayloadRemovalDisallowed</key>
