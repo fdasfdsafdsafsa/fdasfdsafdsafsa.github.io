@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор Паролей</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #131313;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #131313;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .container input[type="number"], .container input[type="checkbox"] {
+            margin: 10px 0;
+        }
+        .container button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+        label {
+            color: white;
+        }
+        .password-output {
+            
+            margin-bottom: 15px;
+            color: white;
+            font-size: 1.2em;
+            word-wrap: break-word;
+            text-align: center;
+        }
+        .display-4 {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="display-4">Генератор паролей</h1>
+    <div class="password-output" id="output"></div>
+    <label for="length">Длина пароля:</label>
+    <input type="number" id="length" min="4" max="128" value="12">
+    <br>
+    <label for="numbers">Включить цифры</label>
+    <input type="checkbox" id="numbers" checked>
+    <br>
+    <label for="symbols">Включить спец. символы</label>
+    <input type="checkbox" id="symbols" checked>
+    <br>
+    <button onclick="generatePassword()">Сгенерировать пароль</button>
+    <button onclick="copyPassword()">Скопировать пароль</button>
+</div>
+
+<script>
+    function generatePassword() {
+        const length = document.getElementById('length').value;
+        const includeNumbers = document.getElementById('numbers').checked;
+        const includeSymbols = document.getElementById('symbols').checked;
+
+        let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        if (includeNumbers) {
+            charset += "0123456789";
+        }
+        if (includeSymbols) {
+            charset += "!@#$%^&*()_+[]{}|;:',.<>?/~`-=";
+        }
+
+        let password = "";
+        for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * charset.length);
+            password += charset[randomIndex];
+        }
+
+        document.getElementById('output').innerText = password;
+    }
+    function copyPassword() {
+        const password = document.getElementById('output').innerText;
+        if (password && password !== "Ваш пароль появится здесь") {
+            navigator.clipboard.writeText(password).then(() => {
+                alert("Пароль скопирован в буфер обмена!");
+            }).catch(err => {
+                console.error('Ошибка при копировании пароля: ', err);
+            });
+        } else {
+            alert("Сначала сгенерируйте пароль!");
+        }
+    }    
+</script>
+
+</body>
+</html>
