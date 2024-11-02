@@ -5,14 +5,10 @@
 dist="$(. /etc/os-release && echo "$ID")"
 version="20.04"
 
-
-### This script is meant to be used: ###
-### ./install.sh <FQDN/URL to panel> <SSL true or false> <email> <username> <firstname> <lastname> <password> <wings true or false> ###
-
 finish(){
     clear
     echo ""
-    echo "[!] Panel installed."
+    echo "Панель был установлен!"
     echo ""
 }
 
@@ -102,6 +98,8 @@ panel_install(){
 }
 
 #! /bin/sh -
+echo "Установка Pterodactyl началась..."
+echo "theyan.ru/ptero.sh"
 
 read -p "Введите IP или FQDN хоста: " FQDN
 read -p "Использовать SSL (true/false): " SSL
@@ -135,8 +133,7 @@ if { [ "$dist" = "ubuntu" ] && [ "$version" = "20.04" ]; } || { [ "$dist" = "deb
     echo "Password: $PASSWORD"
     echo "Wings install: $WINGS"
     echo ""
-    echo "Starting automatic installation in 5 seconds"
-    sleep 5s
+    echo "Starting automatic installation"
     panel_install
 else
     echo "Your OS, $dist $version, is not supported"
