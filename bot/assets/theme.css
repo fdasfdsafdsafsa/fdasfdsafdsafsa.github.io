@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
 :root {
     --primary: #2f64f5;
 }
@@ -7,21 +9,21 @@ body {
     padding: 0;
     background-color: #111111 !important;
     font-weight: 400;
-    font-family: 'Mulish', sans-serif !important;
+    font-family: 'Montserrat', sans-serif;
 }
 
 a {
     text-decoration: none !important;
 }
 .navbar-dark .navbar-nav .nav-link {
-    color: white; /* Цвет текста в навигационных ссылках */
+    color: white; 
 }
 
 .navbar-dark .navbar-toggler-icon {
-    background-color: white; /* Цвет иконки бургера (если она видна) */
+    background-color: white; 
 }
 .navbar {
-    color: #343a40; /* Добавьте этот стиль, чтобы сделать текст белым */
+    color: #343a40; 
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,7 +44,7 @@ h1 {
     /* background: linear-gradient(-45deg, #2f925a, #449aeb); */
     background: linear-gradient(-45deg, #6f00ff, #006eff);
 	background-size: 300% 300%;
-	animation: gradient 15s ease infinite;
+	animation: gradient 4s ease infinite;
 }
 
 nav a {
